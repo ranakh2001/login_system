@@ -126,7 +126,9 @@ class LoginScreen extends StatelessWidget {
                         fontSize: 14),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed('/signup');
+                      },
                       child: Text(
                         "Sign Up",
                         style: GoogleFonts.poppins(
