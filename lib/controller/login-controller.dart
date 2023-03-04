@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 class LoginController extends GetxController {
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
+  TextEditingController phonecontroller = TextEditingController();
   RxBool isVisible = false.obs;
   RxBool rememberMe = false.obs;
   Color grey = const Color.fromARGB(
@@ -15,13 +16,43 @@ class LoginController extends GetxController {
     183,
     202,
   );
-  String contryIntro = "";
-  List<DropdownMenuItem<dynamic>> contries =  [
-    DropdownMenuItem(value: "+970",child: Text("+970",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500),),),
-    DropdownMenuItem(value: "+20",child: Text("+20",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500),),),
-    DropdownMenuItem(value: "+212",child: Text("+212",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500),),),
-    DropdownMenuItem(value: "+216",child: Text("+216",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500),),),
-    DropdownMenuItem(value: "+218",child: Text("+218",style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500),),),
+  RxString contryIntro = "+970".obs;
+  List<DropdownMenuItem<dynamic>> contries = [
+    DropdownMenuItem(
+      value: "+970",
+      child: Text(
+        "+970",
+        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+    ),
+    DropdownMenuItem(
+      value: "+20",
+      child: Text(
+        "+20",
+        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+    ),
+    DropdownMenuItem(
+      value: "+212",
+      child: Text(
+        "+212",
+        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+    ),
+    DropdownMenuItem(
+      value: "+216",
+      child: Text(
+        "+216",
+        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+    ),
+    DropdownMenuItem(
+      value: "+218",
+      child: Text(
+        "+218",
+        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+    ),
   ];
   void changeVisiability() {
     if (isVisible.value) {
@@ -40,6 +71,6 @@ class LoginController extends GetxController {
   }
 
   void selectContry(String contry) {
-    contryIntro = contry;
+    contryIntro.value = contry;
   }
 }

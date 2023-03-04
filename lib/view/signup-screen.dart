@@ -7,6 +7,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'widgets/drop-down-button.dart';
 import 'widgets/email-field-widget.dart';
+import 'widgets/login-with-other.dart';
+import 'widgets/password-field-widget.dart';
+import 'widgets/phone-number-widget.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
@@ -14,14 +17,27 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Get.back();
+          },
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: [
             Container(
-              margin: const EdgeInsets.all(20),
-              width: 50,
-              height: 50,
+              margin: const EdgeInsets.all(10),
+              width: 30,
+              height: 30,
               child: Image.asset("assets/images/logo.png"),
             ),
             Container(
@@ -135,7 +151,58 @@ class SignupScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
             ),
-            Dropdown(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 137, child: Dropdown()),
+                SizedBox(width: 182, child: PhoneNumberTextField())
+              ],
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 5),
+              child: Text(
+                "Password",
+                style: GoogleFonts.poppins(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+            ),
+            PasswordFieldWidget(),
+            // Row(
+            //   children: [
+            //     Text(
+            //       "By Clicking 'Sign Up' , I Agree To",
+            //       style: GoogleFonts.poppins(color: Colors.black, fontSize: 12),
+            //     ),
+            //     Text(
+            //       "Terms of conditions & Peivacy Policy",
+            //       style: GoogleFonts.poppins(
+            //           color: const Color.fromARGB(255, 0, 75, 255),
+            //           fontSize: 12),
+            //     ),
+            //   ],
+            // )
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 15),
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 75, 135, 97),
+                    padding: const EdgeInsets.all(10.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    "Sign Up",
+                    style: GoogleFonts.poppins(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
+                  )),
+            ),
+            const LoginWithOther(),
           ],
         ),
       ),
