@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'widgets/email-field-widget.dart';
 import 'widgets/login-with-other.dart';
+import 'widgets/logo-container.dart';
 import 'widgets/password-field-widget.dart';
 
 // ignore: must_be_immutable
@@ -20,12 +21,7 @@ class LoginScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: [
-            Container(
-              margin: const EdgeInsets.all(20),
-              width: 50,
-              height: 50,
-              child: Image.asset("assets/images/logo.png"),
-            ),
+           const LogoContainer(),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 30),
               child: Text(
@@ -83,7 +79,9 @@ class LoginScreen extends StatelessWidget {
                     ],
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.toNamed("/forgetPassword");
+                      },
                       child: Text(
                         "Forget Password?",
                         style: GoogleFonts.poppins(

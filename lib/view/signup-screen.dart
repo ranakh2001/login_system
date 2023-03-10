@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'widgets/drop-down-button.dart';
 import 'widgets/email-field-widget.dart';
 import 'widgets/login-with-other.dart';
+import 'widgets/logo-container.dart';
 import 'widgets/password-field-widget.dart';
 import 'widgets/phone-number-widget.dart';
 
@@ -21,7 +22,7 @@ class SignupScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
@@ -34,12 +35,7 @@ class SignupScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: ListView(
           children: [
-            Container(
-              margin: const EdgeInsets.all(10),
-              width: 30,
-              height: 30,
-              child: Image.asset("assets/images/logo.png"),
-            ),
+            const LogoContainer(),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 30),
               child: Text(

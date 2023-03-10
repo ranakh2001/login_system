@@ -1,10 +1,13 @@
+
 import 'package:chat/view/login-screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'firebase_options.dart';
+import 'view/forget-password.dart';
 import 'view/signup-screen.dart';
+import 'view/verification-code-screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +31,9 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginScreen(),
       getPages: [
-        GetPage(name: '/signup', page: ()=>SignupScreen())
+        GetPage(name: '/signup', page: ()=>SignupScreen()),
+        GetPage(name: '/forgetPassword', page: ()=>ForgetPassword()),
+         GetPage(name: '/verificationCode', page: ()=>VerificationCodeScreen()),
       ],
     );
   }
