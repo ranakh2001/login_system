@@ -1,16 +1,13 @@
 // ignore_for_file: file_names
 
-import 'package:chat/controller/login-controller.dart';
-import 'package:chat/view/widgets/email-field-widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'widgets/password-field-widget.dart';
 
-// ignore: must_be_immutable
-class ForgetPassword extends StatelessWidget {
-  ForgetPassword({super.key});
-  LoginController loginController = Get.find();
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +16,11 @@ class ForgetPassword extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          onPressed: () => Get.back(),
           icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
           ),
+          onPressed: () => Get.back(),
         ),
       ),
       body: Padding(
@@ -31,11 +28,11 @@ class ForgetPassword extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
-              child: Image.asset("assets/images/forget-password.png"),
+              margin: const EdgeInsets.symmetric(vertical: 5),
+              child: Image.asset("assets/images/reset-password.png"),
             ),
             Text(
-              "Forgot password ?",
+              "Reset password",
               style: GoogleFonts.poppins(
                   color: Colors.black,
                   fontSize: 16,
@@ -52,16 +49,19 @@ class ForgetPassword extends StatelessWidget {
               ),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 10),
+              margin: const EdgeInsets.all(3),
               child: Text(
-                "Email",
+                "Password",
                 style: GoogleFonts.poppins(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.w500),
+                textAlign: TextAlign.start,
               ),
             ),
-            EmailFieldWidget(),
+            Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                child: PasswordFieldWidget()),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 20),
               child: ElevatedButton(
@@ -73,41 +73,16 @@ class ForgetPassword extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Get.toNamed("/verificationCode");
+                    Get.toNamed("/passwordReseted");
                   },
                   child: Text(
-                    "Send Verification Code ",
+                    "Verify ",
                     style: GoogleFonts.poppins(
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
                   )),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Didn't you get the secret code?",
-                    style: GoogleFonts.poppins(
-                        color: const Color.fromARGB(255, 145, 147, 151),
-                        fontSize: 14),
-                  ),
-                  TextButton(
-                      onPressed: () {
-                        Get.toNamed('/signup');
-                      },
-                      child: Text(
-                        "Re-send on",
-                        style: GoogleFonts.poppins(
-                            color: const Color.fromARGB(255, 75, 135, 97),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold),
-                      ))
-                ],
-              ),
-            )
           ],
         ),
       ),

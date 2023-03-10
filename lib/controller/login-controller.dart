@@ -8,6 +8,10 @@ class LoginController extends GetxController {
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController phonecontroller = TextEditingController();
+  TextEditingController c1 = TextEditingController();
+  TextEditingController c2 = TextEditingController();
+  TextEditingController c3 = TextEditingController();
+  TextEditingController c4 = TextEditingController();
   RxBool isVisible = false.obs;
   RxBool rememberMe = false.obs;
   Color grey = const Color.fromARGB(
@@ -54,6 +58,9 @@ class LoginController extends GetxController {
       ),
     ),
   ];
+  TextInputAction next = TextInputAction.next;
+  TextInputAction done = TextInputAction.done;
+
   void changeVisiability() {
     if (isVisible.value) {
       isVisible.value = false;

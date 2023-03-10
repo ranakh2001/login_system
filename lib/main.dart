@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 
 import 'firebase_options.dart';
 import 'view/forget-password.dart';
+import 'view/password-reseted.dart';
+import 'view/reset-password-screen.dart';
 import 'view/signup-screen.dart';
 import 'view/verification-code-screen.dart';
 
@@ -33,7 +35,10 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/signup', page: ()=>SignupScreen()),
         GetPage(name: '/forgetPassword', page: ()=>ForgetPassword()),
-         GetPage(name: '/verificationCode', page: ()=>VerificationCodeScreen()),
+        GetPage(name: '/verificationCode', page: ()=>VerificationCodeScreen()),
+        GetPage(name: '/resetPassword', page: ()=>ResetPassword()),
+        GetPage(name: '/passwordReseted', page: ()=>PasswordReseted()),
+
       ],
     );
   }

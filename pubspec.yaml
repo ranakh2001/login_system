@@ -69,6 +69,8 @@ flutter:
     - assets/images/tik-tok.png
     - assets/images/forget-password.png
     - assets/images/email-veification.png
+    - assets/images/reset-password.png
+    - assets/images/reset-done.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
